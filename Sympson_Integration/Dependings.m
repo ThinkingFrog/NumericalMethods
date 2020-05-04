@@ -11,7 +11,7 @@ hold on
 loglog(eps, max, 'g')
 legend('my', 'min', 'max')
 xlabel('eps')
-%ylabel('|I* - I|')
+ylabel('|I* - I|')
 title('|I* - I|(eps)')
 
 figure
