@@ -18,8 +18,12 @@ double CountFunc(double x) {
 }
 
 double CountFuncAngled(double x) {
-    double point = 0;
-    double y = fabs(1.0 / (double)(1 + 25 * x * x) - 1.0 / (double)(1 + 25 * point * point)) + 1.0 / (double)(1 + 25 * point * point);
+    double point = 0.3;
+    double y = 0;
+    if (x > point)
+        y = fabs(1.0 / (double)(1 + 25 * x * x) - 1.0 / (double)(1 + 25 * point * point)) + 1.0 / (double)(1 + 25 * point * point);
+    else
+        y = CountFunc(x);
     return y;
 }
 
@@ -41,15 +45,16 @@ void FillChebGridAngled(vector < double >* xi, vector <double>* yi) {
 
 void FillRandGrid(vector < double >* xi, vector <double>* yi) {
     double h = (Right - Left) / N;
-    for (unsigned i = 0; i <= N; i++)
+    (*xi).push_back(Left);
+    for (unsigned i = 1; i <= N; i++)
         if (i <= N / 3)
-            (*xi).push_back(Left + i * pow(h, 3));
+            (*xi).push_back((*xi)[i - 1] + i * pow(h, 3));
         else
             if (i >= N / 3 && i <= N * 2 / 3)
-                (*xi).push_back(Left + i * pow(h, 2));
+                (*xi).push_back((*xi)[i - 1] + i * pow(h, 2));
             else
                 if (i >= N * 2 / 3)
-                    (*xi).push_back(Left + i * pow(h, 1));
+                    (*xi).push_back((*xi)[i - 1] + i * pow(h, 1));
     sort((*xi).begin(), (*xi).end());
     for (unsigned i = 0; i <= N; i++)
         (*yi).push_back(CountFunc((*xi)[i]));
@@ -57,15 +62,16 @@ void FillRandGrid(vector < double >* xi, vector <double>* yi) {
 
 void FillRandGridAngled(vector < double >* xi, vector <double>* yi) {
     double h = (Right - Left) / N;
-    for (unsigned i = 0; i <= N; i++)
+    (*xi).push_back(Left);
+    for (unsigned i = 1; i <= N; i++)
         if (i <= N / 3)
-            (*xi).push_back(Left + i * pow(h, 3));
+            (*xi).push_back((*xi)[i - 1] + i * pow(h, 3));
         else
             if (i >= N / 3 && i <= N * 2 / 3)
-                (*xi).push_back(Left + i * pow(h, 2));
+                (*xi).push_back((*xi)[i - 1] + i * pow(h, 2));
             else
                 if (i >= N * 2 / 3)
-                    (*xi).push_back(Left + i * pow(h, 1));
+                    (*xi).push_back((*xi)[i - 1] + i * pow(h, 1));
     sort((*xi).begin(), (*xi).end());
     for (unsigned i = 0; i <= N; i++)
         (*yi).push_back(CountFuncAngled((*xi)[i]));
