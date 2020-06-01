@@ -47,13 +47,13 @@ void FillMatrixVectors(vector <double> pi, vector <double> qi, vector <double> f
             bi.push_back(0);
             ci.push_back(h * B - A);
             di.push_back(A);
-            ri.push_back(h * alpha + error1);
+            ri.push_back(h * (alpha + error1));
         }
         else if (i == N - 1) {
             bi.push_back(-ci[i - 1] - 4 * bi[i - 1]);
             ci.push_back(3 * bi[i - 1] - di[i - 1]);
             di.push_back(0);
-            ri.push_back(h * bi[i - 1] - ri[i - 1] + error2);
+            ri.push_back(2 * h * bi[i - 1] * (0.5 + error2) - ri[i - 1]);
         }
         else {
             bi.push_back(1 - h / 2 * pi[i]);
@@ -133,11 +133,10 @@ int main() {
         file1 << h << " " << FindMaxMistake(y, yi) << endl;
     }
 
-    N = 1000;
+    N = (unsigned)1e4;
     h = (RIGHT - LEFT) / (N - 1);
 
     for (error1 = 0.1; error1 > 1e-16; error1 /= 10) {
-
         vector<double> xi;
         FillXGrid(xi);
 
@@ -166,7 +165,6 @@ int main() {
     error1 = 0;
     
     for (error2 = 0.1; error2 > 1e-16; error2 /= 10) {
-
         vector<double> xi;
         FillXGrid(xi);
 
