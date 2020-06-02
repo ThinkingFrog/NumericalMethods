@@ -15,14 +15,12 @@ loglog(delta, mstk)
 grid on
 xlabel('delta')
 ylabel('Max mistake')
-title('Left part delta')
 
-figure
+hold on
 A = load('output3.txt');
 delta = A(:, 1);
 mstk = A(:, 2);
 loglog(delta, mstk)
-grid on
-xlabel('delta')
-ylabel('Max mistake')
-title('Right part delta')
+
+legend('Left part delta', 'Right part delta')
+title('|y*-y|(delta)')
