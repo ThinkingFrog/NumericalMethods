@@ -31,9 +31,9 @@ double CountIntegral() {
 int main() {
     std::ofstream file1, file2, file3;
     
-    file1.open("../../output1.txt");
-    file2.open("../../output2.txt");
-    file3.open("../../output3.txt");
+    file1.open("../output1.txt");
+    file2.open("../output2.txt");
+    file3.open("../output3.txt");
 
     file1.precision(30);
     file2.precision(30);

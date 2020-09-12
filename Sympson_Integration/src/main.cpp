@@ -63,8 +63,8 @@ double CountIntegral(void) {
 int main(void) {
 
     ofstream file1, file2;
-    file1.open("../../output1_2.txt");
-    file2.open("../../output2_2.txt");
+    file1.open("../output1_2.txt");
+    file2.open("../output2_2.txt");
     file1.precision(15);
     file2.precision(15);
 

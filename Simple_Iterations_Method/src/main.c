@@ -208,7 +208,7 @@ int main(void) {
 	//---------------------------------------------------------------------------------------------
 
 		// ||x* - x|| (eps)
-	F = fopen("../../Dependings1.txt", "w");
+	F = fopen("../Dependings1.txt", "w");
 	//F = stdout;
 	while (epsilon >= 1e-15) {
 
@@ -234,7 +234,7 @@ int main(void) {
 
 		// ||Ax - b|| (eps)
 	epsilon = 1e-1;
-	F = fopen("../../Dependings2.txt", "w");
+	F = fopen("../Dependings2.txt", "w");
 	//F = stdout;
 	while (epsilon >= 1e-15) {
 
@@ -260,7 +260,7 @@ int main(void) {
 
 		// ||x* - x|| (det(A))
 	epsilon = 1e-14;
-	F = fopen("../../Dependings3.txt", "w");
+	F = fopen("../Dependings3.txt", "w");
 	//	F = stdout;
 	while (GetDet(A, SIZE) > epsilon) {
 
@@ -295,7 +295,7 @@ int main(void) {
 
 		// ||Ax - b|| (det(A))
 	epsilon = 1e-14;
-	F = fopen("../../Dependings4.txt", "w");
+	F = fopen("../Dependings4.txt", "w");
 	//F = stdout;
 	while (GetDet(A, SIZE) > epsilon) {
 
@@ -330,7 +330,7 @@ int main(void) {
 
 		// N (eps)
 	epsilon = 1e-1;
-	F = fopen("../../Dependings5.txt", "w");
+	F = fopen("../Dependings5.txt", "w");
 	//F = stdout;
 	while (epsilon >= 1e-15) {
 
@@ -356,7 +356,7 @@ int main(void) {
 		// N (x0)
 	epsilon = 1e-14;
 	k = 100;
-	F = fopen("../../Dependings6.txt", "w");
+	F = fopen("../Dependings6.txt", "w");
 	//F = stdout;
 	while (k >= 1) {
 
@@ -385,7 +385,7 @@ int main(void) {
 
 		// N (det(A))
 	epsilon = 1e-14;
-	F = fopen("../../Dependings7.txt", "w");
+	F = fopen("../Dependings7.txt", "w");
 	//F = stdout;
 	while (GetDet(A, SIZE) > epsilon) {
 
