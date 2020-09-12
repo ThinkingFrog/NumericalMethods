@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
+#include <algorithm>
 
 using namespace std;
 
@@ -200,11 +201,11 @@ void Euler_Cauchy_Processing() {
     using namespace euler_cauchy;
 
     ofstream file1, file2, file3, file4, file5;
-    file1.open("../../output1_1.txt", ios::out | ios::trunc);
-    file2.open("../../output2_1.txt", ios::out | ios::trunc);
-    file3.open("../../output3_1.txt", ios::out | ios::trunc);
-    file4.open("../../output4_1.txt", ios::out | ios::trunc);
-    file5.open("../../output5_1.txt", ios::out | ios::trunc);
+    file1.open("../output1_1.txt", ios::out | ios::trunc);
+    file2.open("../output2_1.txt", ios::out | ios::trunc);
+    file3.open("../output3_1.txt", ios::out | ios::trunc);
+    file4.open("../output4_1.txt", ios::out | ios::trunc);
+    file5.open("../output5_1.txt", ios::out | ios::trunc);
 
     for (N = 10; N < 1e4; N += (int)pow(10, (int)log10(N))) {
         imax = 0;
@@ -263,11 +264,11 @@ void Finite_Differencies_Processing() {
     using namespace finite_differencies;
 
     ofstream file1, file2, file3, file4, file5;
-    file1.open("../../output1_2.txt", ios::out | ios::trunc);
-    file2.open("../../output2_2.txt", ios::out | ios::trunc);
-    file3.open("../../output3_2.txt", ios::out | ios::trunc);
-    file4.open("../../output4_2.txt", ios::out | ios::trunc);
-    file5.open("../../output5_2.txt", ios::out | ios::trunc);
+    file1.open("../output1_2.txt", ios::out | ios::trunc);
+    file2.open("../output2_2.txt", ios::out | ios::trunc);
+    file3.open("../output3_2.txt", ios::out | ios::trunc);
+    file4.open("../output4_2.txt", ios::out | ios::trunc);
+    file5.open("../output5_2.txt", ios::out | ios::trunc);
 
     for (N = 10; N < 1e4; N += (int)pow(10, (int)log10(N))) {
         h = (RIGHT - LEFT) / (N - 1);
